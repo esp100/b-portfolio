@@ -20,7 +20,7 @@ function renderCursos(cursos, tbody){
     const fragment = document.createDocumentFragment();
 
     cursos.forEach(({ dominio, id, titulo, alias }) =>{
-        const url = `${dominio}${id}`;
+        const url = `https://${dominio}${id}`;
 
         const tr = document.createElement('tr');
 
