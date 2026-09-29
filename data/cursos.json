@@ -1,306 +1,408 @@
 [
     {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-1d6ddbc6-4e48-4ad3-bd35-1e2294de0ce0",
         "titulo": "Gestión inteligente del tiempo (Productividad)",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Productividad",
+        "alias_eng": "Productivity",
+        "date": "",
+        "show": false,
         "prioridad": 30
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-1e549705-fab5-4d54-afcd-ce452177d1b1",
         "titulo": "Aprende a crear una API RESTful con Java y Spring Boot",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Java & Spring Boot: RESTful APIs",
+        "alias_eng": "Java & Spring Boot: RESTful APIs",
+        "date": "",
+        "show": true,
         "prioridad": 11
     },
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-3d08f901-b02d-4488-af1f-96466b998685",
         "titulo": "La Resiliencia: Un Recurso Potencial para tu Crecimiento",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Resiliencia",
+        "alias_eng": "Resilience",
+        "date": "",
+        "show": false,
         "prioridad": 30
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-7abe4c92-b5f3-490f-b8eb-f9966fd5de5c",
         "titulo": "Principios SOLID y Clean Code. Escribe código de calidad.",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Principios SOLID y Clean Code",
+        "alias_eng": "Clean Code & SOLID Principles",
+        "date": "",
+        "show": true,
         "prioridad": 15
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-7c1f9eef-2fa6-4acb-802f-4d687d35025c",
         "titulo": "Habilidades Comunicativas: Mejora Tu Comunicación",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Habilidades Comunicativas",
+        "alias_eng": "Communication Skills",
+        "date": "",
+        "show": false,
         "prioridad": 30
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-26ff0417-67bd-4dfb-9ea1-fb8abb1653e7",
         "titulo": "SQL - Curso completo de Bases de Datos - de 0 a Avanzado",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "SQL",
+        "alias_eng": "SQL",
+        "date": "",
+        "show": true,
         "prioridad": 7
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-35a666db-4e05-4696-a1bc-c32159553c2a",
         "titulo": "Curso Certificación Profesional Java 11, 17 y 21",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Java",
+        "alias_eng": "Java",
+        "date": "",
+        "show": true,
         "prioridad": 9
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-35dbfa0c-48a7-4951-8d66-b74c1605282d",
         "titulo": "HABLAR EN PÚBLICO: Oratoria avanzada; pierde miedo escénico",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Hablar en Público",
+        "alias_eng": "Public Speaking",
+        "date": "",
+        "show": false,
         "prioridad": 30
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-43f40122-677f-4a53-962c-6471b6e8771d",
         "titulo": "Trabajo en Equipo",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Trabajo en Equipo",
+        "alias_eng": "Teamwork",
+        "date": "",
+        "show": false,
         "prioridad": 20
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-53b6e2ee-870e-400d-a9ad-8009b1f73eb1",
         "titulo": "Leadership: Practical Leadership Skills",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Habilidades de Liderazgo",
+        "alias_eng": "Leadership Skills",
+        "date": "",
+        "show": false,
         "prioridad": 21
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-58f6a91d-6703-47e6-858a-d356e8c5e32c",
         "titulo": "Big Data y Spark: ingeniería de datos con Python y pyspark",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Big Data & PySpark",
+        "alias_eng": "Big Data & PySpark",
+        "date": "",
+        "show": true,
         "prioridad": 3
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-70be1621-4033-40fd-a158-cd4b3a9c4b55",
         "titulo": "GIT+GitHub: Todo un sistema de control de versiones de cero",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Git + GitHub",
+        "alias_eng": "Git + GitHub",
+        "date": "",
+        "show": true,
         "prioridad": 9
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-73ee41ba-224b-4e19-93e9-93dc582ac4bf",
         "titulo": "GCP - Google Cloud Professional Data Engineer Certification",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "GCP Google Cloud Platform",
+        "alias_eng": "GCP Google Cloud Platform",
+        "date": "",
+        "show": true,
         "prioridad": 2
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-788ae7f1-ed8f-49db-bcc5-29a136bf63eb",
         "titulo": "Aumenta tu Productividad y Alcanza tus Metas",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Productividad y Metas",
+        "alias_eng": "Productivity and Goals",
+        "date": "",
+        "show": false,
         "prioridad": 32
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-889c58ad-f6c2-47a4-aefc-7a14159dfded",
         "titulo": "Aprende todo sobre Looker Studio 2025 (antes Data Studio)",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Looker Studio",
+        "alias_eng": "Looker Studio",
+        "date": "",
+        "show": true,
         "prioridad": 17
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-891e41b5-22e1-4b4f-9928-c3f5cd2e2a25",
         "titulo": "The Complete Hands-On Introduction to Apache Airflow 3",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Apache Airflow 3",
+        "alias_eng": "Apache Airflow 3",
+        "date": "",
+        "show": true,
         "prioridad": 6
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-084568df-b73e-42ed-b4e9-db530e9c3381",
         "titulo": "Autoestima y manejo de emociones. Crea tu propia autoimagen.",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Autoestima y Manejo de Emociones",
+        "alias_eng": "Self-esteem and Emotional Management",
+        "date": "",
+        "show": false,
         "prioridad": 31
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-31525682-5388-47ad-b10e-279dfbd2c6ce",
         "titulo": "Automatización con Selenium Webdriver para principiantes",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Automatización con Selenium Webdriver y Java",
+        "alias_eng": "Automation with Selenium Webdriver and Java",
+        "date": "",
+        "show": true,
         "prioridad": 25
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-a8ebc0ea-8c4f-4e25-84f8-2a16c6ce28a7",
         "titulo": "Curso Gemini Google Workspace. Máxima Productividad con IA",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Gemini en Google Workspace",
+        "alias_eng": " Gemini on Google Workspace",
+        "date": "",
+        "show": true,
         "prioridad": 28
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-b7f4cd36-34f0-4aa5-a477-7c87342be91a",
         "titulo": "Curso de Gestión de Equipos y Tabajo en Remoto",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Gestión de Equipos y Tabajo en Remoto",
+        "alias_eng": "Team Management and Remote Work",
+        "date": "",
+        "show": true,
         "prioridad": 30
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-bb5a48d3-2f31-441d-b840-07e20962e154",
         "titulo": "Google Cloud Platform - Fundamentos Laboratorios y Practicas",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Google Cloud Platform - Fundamentos",
+        "alias_eng": "Google Cloud Platform - Fundamentals",
+        "date": "",
+        "show": true,
         "prioridad": 10
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-d020c2d5-53fd-47f1-a1bc-7e41910a4e4d",
         "titulo": "Python A-Z: Python para Data Science con Ejercicios Reales!",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Python para Data Science",
+        "alias_eng": "Python for Data Science",
+        "date": "",
+        "show": true,
         "prioridad": 5
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-d1017923-784c-468a-b16f-38b56373cf49",
         "titulo": "Cognotécnicas: Herramientas para pensar más y mejor",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Cognotécnicas",
+        "alias_eng": "Cognitive Techniques",
+        "date": "",
+        "show": false,
         "prioridad": 34
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-dd6395e9-d4eb-4ae6-8012-2171ced36e66",
         "titulo": "Vibe Coding desde Cero: Aprende a \"Programar\" Usando IA",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Vibe Coding",
+        "alias_eng": "Vibe Coding",
+        "date": "",
+        "show": true,
         "prioridad": 27
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-e54d194b-9875-4379-bddb-d78d64844f23",
         "titulo": "Fundamentos de Algoritmos, entrena tu Lógica en programación",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Fundamentos de Algoritmos",
+        "alias_eng": "Fundamentals of Algorithms",
+        "date": "",
+        "show": false,
         "prioridad": 29
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-e87a3022-6670-4a6f-a75a-46d0ea238e92",
         "titulo": "BigQuery de Cero a Héroe",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "BigQuery",
+        "alias_eng": "BigQuery",
+        "date": "",
+        "show": true,
         "prioridad": 12
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-fb509c01-d27e-4e4d-9f7b-4e39f9a492db",
         "titulo": "Prompt Engineering con ChatGPT - La guía definitiva",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Prompt Engineering con ChatGPT",
+        "alias_eng": "Prompt Engineering with ChatGPT",
+        "date": "",
+        "show": true,
         "prioridad": 26
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-fd8c58a7-aa19-4e5f-9516-9a7eafcdc1d5",
         "titulo": "El Arte de la Escucha Activa",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "El Arte de la Escucha Activa",
+        "alias_eng": "The Art of Active Listening",
+        "date": "",
+        "show": false,
         "prioridad": 0
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-f4134db9-b4e2-4fe0-8130-6159a1f0a409",
         "titulo": "Liderazgo en la era de la IA",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Liderazgo en la Era de la IA",
+        "alias_eng": "Leadership in the AI Era",
+        "date": "",
+        "show": false,
         "prioridad": 29
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-2fe55e92-626e-486e-b1cd-8e0bb9d0f6c1",
         "titulo": "Crea tu portafolio como Data Engineer | 4 proyectos Reales",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Portafolio de un Data Engineer",
+        "alias_eng": "Portfolio of a Data Engineer",
+        "date": "",
+        "show": false,
         "prioridad": 29
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-33f59678-87b3-429e-95bb-bdc34cba4879",
         "titulo": "Liderazgo +",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Liderazgo",
+        "alias_eng": "Leadership",
+        "date": "",
+        "show": false,
         "prioridad": 32
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-213ff6bc-9c8b-4c65-8109-a1ca7c05e9ef",
         "titulo": "Statistics and Hypothesis Testing for Data science",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Estadística y Prueba de Hipótesis",
+        "alias_eng": "Statistics and Hypothesis Testing",
+        "date": "",
+        "show": false,
         "prioridad": 14
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-561922aa-8735-49a5-8c7f-3c22f7d43d0f",
         "titulo": "Productividad y Manejo del Tiempo",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Productividad",
+        "alias_eng": "Productivity",
+        "date": "",
+        "show": false,
         "prioridad": 29
     },
 
 {
         "dominio": "ude.my/",
+        "provider": "Udemy Business",
         "id": "UC-c0b86482-c442-4e93-a45a-2f5875aa1b1e",
         "titulo": "Habilidades de negociación y persuación",
-        "alias": "",
-        "alias_eng": "",
+        "alias": "Habilidades de negociación y persuación",
+        "alias_eng": "Negotiation and Persuasion Skills",
+        "date": "",
+        "show": false,
         "prioridad": 31
     }
 
