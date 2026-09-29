@@ -1,0 +1,18 @@
+[    
+    { "icono": "./Assets/visual-studio-code.svg" , "nombre" : "Visual Studio Code"},
+    { "icono": "./Assets/Google-Colab.png" , "nombre" : "Colab"}, 
+    { "icono": "./Assets/git.png" , "nombre" : "Git"}, 
+    { "icono": "./Assets/GithubNegro.svg" , "nombre" : "GitHub"}, 
+    { "icono": "./Assets/python.png" , "nombre" : "Python"}, 
+    { "icono": "./Assets/flask-logo.png" , "nombre" : "Flask"}, 
+    { "icono": "./Assets/mysql-logo.png" , "nombre" : "MySQL"}, 
+    { "icono": "./Assets/Pandas.png" , "nombre" : "Pandas"},
+    { "icono": "./Assets/apache_spark_logo.png" , "nombre" : "Spark"}, 
+    { "icono": "./Assets/apache-airflow.png" , "nombre" : "Airflow"},  
+    { "icono": "./Assets/MongoDB.png" , "nombre" : "MongoDB"}, 
+    { "icono": "./Assets/java.png" , "nombre" : "Java"}, 
+    { "icono": "./Assets/spring-boot-logo.png" , "nombre" : "Spring Boot"}, 
+    { "icono": "./Assets/Data-Studio-Logo.png" , "nombre" : "Looker Data Studio"}, 
+    { "icono": "./Assets/gcp-logo.png" , "nombre" : "GCP"}, 
+    { "icono": "./Assets/KNIMELogoTM.png" , "nombre" : "KNIME"}
+]
