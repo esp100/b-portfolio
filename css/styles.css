@@ -1,0 +1,648 @@
+body {
+    background-color: #FFFBFE;
+    margin: 0;
+}
+
+/* ========== HEADER ========== */
+header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    margin: 0;
+    padding: 10px 40px;
+    background-color: #101010;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img {
+    width: 17px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+}
+
+.logo:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.barraNav {
+    padding: 0 40px;
+    display: flex;
+    margin: 0;
+    gap: 40px;
+    font-family: "Hanken Grotesk", sans-serif;
+    position: relative;
+    z-index: 5;
+}
+
+.barraNav a {
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.barraNav a:hover {
+    transform: scale(1.05);
+}
+
+.buttonContacto {
+    border: none;
+    border-radius: 30px;
+    padding: 0 15px;
+    background-color: #47E5BC;
+    color: black !important;
+    transition: transform 0.3s ease-in-out;
+}
+
+.buttonContacto:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* ========== BANNER ========== */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+    font-family: "Hanken Grotesk", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+#videoBanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 17, 17, 0.9);
+    z-index: 1;
+}
+
+.contenidoBanner {
+    position: relative;
+    z-index: 2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: large;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.content {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.imagenBanner {
+    display: flex;
+    align-items: center;
+}
+
+.imagenBanner img {
+    width: 320px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+    transform: rotate(3deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.imagenBanner img:hover {
+    transform: scale(1.05);
+}
+
+.holaTitle {
+    margin-bottom: 0;
+}
+
+.subTitle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.textoBanner {
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgb(185, 185, 185);
+}
+
+.botones {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Botones genéricos .cv */
+.cv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    gap: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #47E5BC;
+    border-radius: 30px;
+    padding: 5px 15px;
+    border: none;
+}
+
+.cv:hover {
+    transform: scale(1.05);
+}
+
+.cv img {
+    width: 14px;
+}
+
+#texto {
+    background: linear-gradient(90deg, #9bffd8 0%, #5bbd96 40%, rgb(235, 235, 235) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+/* ========== SKILLS ========== */
+
+.skills-intro {
+    padding: 40px 0 0 0;  
+}
+
+.habilidadesSkills {
+    text-align: center;
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 23px;
+    color: #212121;
+    margin: 0;
+    padding: 0 0 10px 0;   
+}
+
+.textohabilidades {
+    text-align: center;
+    padding: 20px 200px;
+    font-family: "Hanken Grotesk", sans-serif;
+    margin: 0 0 40px 0;   
+}
+
+.skills {
+    overflow: hidden;
+    padding: 0 0 40px 0;   
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.carrusel {
+    width: 100%;
+}
+
+.pista {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: max-content;        
+    animation: scroll var(--duracion, 40s) linear infinite;
+    will-change: transform;
+}
+
+.carrusel:hover .pista {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }  
+}
+
+.pista li {
+    position: relative;
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 80px;
+    height: 100px;
+}
+
+.pista img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.25s ease, filter 0.25s ease;
+    filter: grayscale(0.3);
+}
+
+.pista li:hover img {
+    transform: scale(1.15);
+    filter: grayscale(0);
+}
+
+.pista li::after {
+    content: attr(data-nombre);
+    position: absolute;
+    bottom: -0.6rem;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    background: #222;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.pista li:hover::after {
+    opacity: 1;
+    transform: translate(-50%, 120%);
+}
+
+/* ========== PROYECTOS ========== */
+.tituloProyectos,
+.tituloCursos {
+    text-align: center;
+    font-family: "Hanken Grotesk", sans-serif;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.gridImage {
+    width: 500px;
+    object-fit: cover;
+}
+
+.textosmochi,
+.textospet,
+.textoshydro,
+.textosample {
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+.text-sample a {
+    width: fit-content;
+    border: none;
+    background-color: #47E5BC;
+    border-radius: 30px;
+    padding: 5px 15px;
+}
+
+.sample {
+    transform: rotate(3deg);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    width: 500px;
+}
+
+.sample:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+/* ========== CURSOS (estilos temporales) ========== */
+.tabla-cursos {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Hanken Grotesk", sans-serif;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tabla-cursos th,
+.tabla-cursos td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabla-cursos th {
+    background-color: #47E5BC;
+    color: black;
+    font-weight: 600;
+}
+
+.tabla-cursos tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#cursos-error {
+    text-align: center;
+    color: #E54B4B;
+    font-family: "Hanken Grotesk", sans-serif;
+    margin-top: 20px;
+}
+
+/* ========== FOOTER ========== */
+#contacto {
+    position: relative;
+    z-index: 2;
+    background-color: #101010;
+    color: white;
+    padding: 40px 0;
+    font-family: "Hanken Grotesk", sans-serif;
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#contacto h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.textoContacto {
+    color: #bdbdbd;
+    margin-bottom: 20px;
+}
+
+.correoFooter {
+    display: inline-block;
+    color: #101010;
+    background-color: #47E5BC;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 8px 18px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.correoFooter:hover {
+    transform: scale(1.04);
+}
+
+.logo2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 40px;
+}
+
+.logo2 img {
+    width: 22px;
+}
+
+.logoTitle {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Footer {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 50px;
+}
+
+.Footer h5 {
+    color: #47E5BC;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.Footer p {
+    color: #c7c7c7;
+    margin-bottom: 12px;
+}
+
+.lineaFinal {
+    background-color: #47E5BC;
+    width: 100%;
+    height: 3px;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .barraNav {
+        padding: 0;
+        gap: 20px;
+    }
+
+    .banner {
+        height: auto;
+        min-height: 600px;
+        padding: 50px 20px;
+    }
+
+    .contenidoBanner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .imagenBanner {
+        padding-left: 0;
+    }
+
+    .imagenBanner img {
+        width: 280px;
+        margin-left: 0;
+    }
+
+    .textohabilidades {
+        padding: 20px 80px;
+    }
+
+    .skill {
+        margin-right: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .barraNav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        padding: 0;
+    }
+
+    .barraNav a {
+        font-size: 14px;
+    }
+
+    .buttonContacto {
+        padding: 4px 14px;
+    }
+
+    .banner {
+        min-height: 800px;
+        padding: 40px 20px;
+    }
+
+    .contenidoBanner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 35px;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .holaTitle {
+        font-size: 34px;
+    }
+
+    .subTitle {
+        font-size: 22px;
+    }
+
+    .textoBanner {
+        font-size: 15px;
+    }
+
+    .botones {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .imagenBanner {
+        padding-left: 0;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .imagenBanner img {
+        width: 260px;
+        max-width: 85%;
+        margin-left: 0;
+    }
+
+    .textohabilidades {
+        padding: 20px;
+    }
+
+    .habilidadesSkills {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .skills-track img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .skill {
+        margin-right: 70px;
+    }
+
+    .tituloProyectos,
+    .tituloCursos {
+        margin-bottom: 30px;
+    }
+
+    #proyectos .row {
+        row-gap: 25px;
+    }
+
+    .text-sample,
+    .textosmochi,
+    .textospet,
+    .textoshydro,
+    .textosample {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .gridImage,
+    .sample {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .sample {
+        transform: none;
+    }
+
+    .sample:hover {
+        transform: scale(1.02);
+    }
+
+    #contacto {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    #contacto h2 {
+        font-size: 30px;
+    }
+
+    .logo2 {
+        justify-content: center;
+    }
+
+    .Footer {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding-left: 0;
+        padding-top: 30px;
+        margin-top: 20px;
+    }
+}
