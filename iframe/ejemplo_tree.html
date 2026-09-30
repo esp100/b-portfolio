@@ -1,0 +1,321 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script>function neighbourhoodHighlight(params) {
+  // console.log("in nieghbourhoodhighlight");
+  allNodes = nodes.get({ returnType: "Object" });
+  // originalNodes = JSON.parse(JSON.stringify(allNodes));
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    highlightActive = true;
+    var i, j;
+    var selectedNode = params.nodes[0];
+    var degrees = 2;
+
+    // mark all nodes as hard to read.
+    for (let nodeId in allNodes) {
+      // nodeColors[nodeId] = allNodes[nodeId].color;
+      allNodes[nodeId].color = "rgba(200,200,200,0.5)";
+      if (allNodes[nodeId].hiddenLabel === undefined) {
+        allNodes[nodeId].hiddenLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+    var connectedNodes = network.getConnectedNodes(selectedNode);
+    var allConnectedNodes = [];
+
+    // get the second degree nodes
+    for (i = 1; i < degrees; i++) {
+      for (j = 0; j < connectedNodes.length; j++) {
+        allConnectedNodes = allConnectedNodes.concat(
+          network.getConnectedNodes(connectedNodes[j])
+        );
+      }
+    }
+
+    // all second degree nodes get a different color and their label back
+    for (i = 0; i < allConnectedNodes.length; i++) {
+      // allNodes[allConnectedNodes[i]].color = "pink";
+      allNodes[allConnectedNodes[i]].color = "rgba(150,150,150,0.75)";
+      if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[allConnectedNodes[i]].label =
+          allNodes[allConnectedNodes[i]].hiddenLabel;
+        allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // all first degree nodes get their own color and their label back
+    for (i = 0; i < connectedNodes.length; i++) {
+      // allNodes[connectedNodes[i]].color = undefined;
+      allNodes[connectedNodes[i]].color = nodeColors[connectedNodes[i]];
+      if (allNodes[connectedNodes[i]].hiddenLabel !== undefined) {
+        allNodes[connectedNodes[i]].label =
+          allNodes[connectedNodes[i]].hiddenLabel;
+        allNodes[connectedNodes[i]].hiddenLabel = undefined;
+      }
+    }
+
+    // the main node gets its own color and its label back.
+    // allNodes[selectedNode].color = undefined;
+    allNodes[selectedNode].color = nodeColors[selectedNode];
+    if (allNodes[selectedNode].hiddenLabel !== undefined) {
+      allNodes[selectedNode].label = allNodes[selectedNode].hiddenLabel;
+      allNodes[selectedNode].hiddenLabel = undefined;
+    }
+  } else if (highlightActive === true) {
+    // console.log("highlightActive was true");
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      // allNodes[nodeId].color = "purple";
+      allNodes[nodeId].color = nodeColors[nodeId];
+      // delete allNodes[nodeId].color;
+      if (allNodes[nodeId].hiddenLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
+        allNodes[nodeId].hiddenLabel = undefined;
+      }
+    }
+    highlightActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    // console.log("Nothing was selected");
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        // console.log(allNodes[nodeId]);
+        // allNodes[nodeId].color = {};
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function filterHighlight(params) {
+  allNodes = nodes.get({ returnType: "Object" });
+  // if something is selected:
+  if (params.nodes.length > 0) {
+    filterActive = true;
+    let selectedNodes = params.nodes;
+
+    // hiding all nodes and saving the label
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = true;
+      if (allNodes[nodeId].savedLabel === undefined) {
+        allNodes[nodeId].savedLabel = allNodes[nodeId].label;
+        allNodes[nodeId].label = undefined;
+      }
+    }
+
+    for (let i=0; i < selectedNodes.length; i++) {
+      allNodes[selectedNodes[i]].hidden = false;
+      if (allNodes[selectedNodes[i]].savedLabel !== undefined) {
+        allNodes[selectedNodes[i]].label = allNodes[selectedNodes[i]].savedLabel;
+        allNodes[selectedNodes[i]].savedLabel = undefined;
+      }
+    }
+
+  } else if (filterActive === true) {
+    // reset all nodes
+    for (let nodeId in allNodes) {
+      allNodes[nodeId].hidden = false;
+      if (allNodes[nodeId].savedLabel !== undefined) {
+        allNodes[nodeId].label = allNodes[nodeId].savedLabel;
+        allNodes[nodeId].savedLabel = undefined;
+      }
+    }
+    filterActive = false;
+  }
+
+  // transform the object into an array
+  var updateArray = [];
+  if (params.nodes.length > 0) {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  } else {
+    for (let nodeId in allNodes) {
+      if (allNodes.hasOwnProperty(nodeId)) {
+        updateArray.push(allNodes[nodeId]);
+      }
+    }
+    nodes.update(updateArray);
+  }
+}
+
+function selectNode(nodes) {
+  network.selectNodes(nodes);
+  neighbourhoodHighlight({ nodes: nodes });
+  return nodes;
+}
+
+function selectNodes(nodes) {
+  network.selectNodes(nodes);
+  filterHighlight({nodes: nodes});
+  return nodes;
+}
+
+function highlightFilter(filter) {
+  let selectedNodes = []
+  let selectedProp = filter['property']
+  if (filter['item'] === 'node') {
+    let allNodes = nodes.get({ returnType: "Object" });
+    for (let nodeId in allNodes) {
+      if (allNodes[nodeId][selectedProp] && filter['value'].includes((allNodes[nodeId][selectedProp]).toString())) {
+        selectedNodes.push(nodeId)
+      }
+    }
+  }
+  else if (filter['item'] === 'edge'){
+    let allEdges = edges.get({returnType: 'object'});
+    // check if the selected property exists for selected edge and select the nodes connected to the edge
+    for (let edge in allEdges) {
+      if (allEdges[edge][selectedProp] && filter['value'].includes((allEdges[edge][selectedProp]).toString())) {
+        selectedNodes.push(allEdges[edge]['from'])
+        selectedNodes.push(allEdges[edge]['to'])
+      }
+    }
+  }
+  selectNodes(selectedNodes)
+}</script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+            
+            
+            
+            
+            
+
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 900px;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#FF5733", "font": {"bold": true, "size": 18}, "id": "/Filosof\u00eda", "label": "/Filosof\u00eda", "level": 0, "shape": "dot", "size": 30}, {"color": "#97c2fc", "id": "/Proposici\u00f3n", "label": "/Proposici\u00f3n", "level": 1, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Entendimiento", "label": "/Entendimiento", "level": 1, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Hip\u00f3tesis_(m\u00e9todo_cient\u00edfico)", "label": "/Hip\u00f3tesis_(m\u00e9todo_cient\u00edfico)", "level": 2, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Experimento", "label": "/Experimento", "level": 3, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Ciencias_naturales", "label": "/Ciencias_naturales", "level": 4, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/F\u00edsica", "label": "/F\u00edsica", "level": 5, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/F\u00edsica_cl\u00e1sica", "label": "/F\u00edsica_cl\u00e1sica", "level": 6, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Espectro_electromagn\u00e9tico", "label": "/Espectro_electromagn\u00e9tico", "level": 6, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Materia", "label": "/Materia", "level": 7, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Interpretaci\u00f3n#Ciencias_naturales_y_formales", "label": "/Interpretaci\u00f3n#Ciencias_naturales_y_formales", "level": 8, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Idea", "label": "/Idea", "level": 9, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Creatividad", "label": "/Creatividad", "level": 10, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Investigaci\u00f3n_cient\u00edfica", "label": "/Investigaci\u00f3n_cient\u00edfica", "level": 11, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Metodolog\u00eda", "label": "/Metodolog\u00eda", "level": 12, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/M\u00e9todo_cient\u00edfico", "label": "/M\u00e9todo_cient\u00edfico", "level": 13, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Ciencia", "label": "/Ciencia", "level": 14, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Psicolog\u00eda", "label": "/Psicolog\u00eda", "level": 15, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Ling\u00fc\u00edstica", "label": "/Ling\u00fc\u00edstica", "level": 15, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Actividad", "label": "/Actividad", "level": 16, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Econom\u00eda", "label": "/Econom\u00eda", "level": 17, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Factores_de_producci\u00f3n", "label": "/Factores_de_producci\u00f3n", "level": 18, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Empresa", "label": "/Empresa", "level": 19, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Emprendedor", "label": "/Emprendedor", "level": 20, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Negocio", "label": "/Negocio", "level": 21, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Tiempo_libre", "label": "/Tiempo_libre", "level": 22, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Entretenimiento", "label": "/Entretenimiento", "level": 23, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Entretenimiento_deportivo", "label": "/Entretenimiento_deportivo", "level": 24, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Lucha_libre_profesional", "label": "/Lucha_libre_profesional", "level": 25, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Women\u0027s_Championship", "label": "/Women\u0027s_Championship", "level": 26, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Wonder_of_Stardom_Championship", "label": "/Wonder_of_Stardom_Championship", "level": 27, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Significado", "label": "/Significado", "level": 16, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Polis\u00e9mico", "label": "/Polis\u00e9mico", "level": 16, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Sem\u00e1ntica", "label": "/Sem\u00e1ntica", "level": 17, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Designaci\u00f3n", "label": "/Designaci\u00f3n", "level": 18, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Nombre", "label": "/Nombre", "level": 19, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Wiki", "label": "/Wiki", "level": 20, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Ayuda:Espacio_de_nombres", "label": "/Ayuda:Espacio_de_nombres", "level": 21, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Letrado", "label": "/Letrado", "level": 17, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Abogada", "label": "/Abogada", "level": 18, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Alejandra_Gils_Carb\u00f3", "label": "/Alejandra_Gils_Carb\u00f3", "level": 19, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Espectro_visible", "label": "/Espectro_visible", "level": 7, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Vista", "label": "/Vista", "level": 8, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Im\u00e1genes", "label": "/Im\u00e1genes", "level": 9, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Pel\u00edcula", "label": "/Pel\u00edcula", "level": 10, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Guion_(g\u00e9nero_literario)", "label": "/Guion_(g\u00e9nero_literario)", "level": 11, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Guion_cinematogr\u00e1fico", "label": "/Guion_cinematogr\u00e1fico", "level": 12, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Guionista", "label": "/Guionista", "level": 13, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Sam_Lake", "label": "/Sam_Lake", "level": 14, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Concepto", "label": "/Concepto", "level": 2, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Sistema", "label": "/Sistema", "level": 3, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Sistema_formal", "label": "/Sistema_formal", "level": 4, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Software", "label": "/Software", "level": 5, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Desarrollo_de_software", "label": "/Desarrollo_de_software", "level": 6, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Framework", "label": "/Framework", "level": 7, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Objetivos_de_control_para_la_informaci\u00f3n_y_tecnolog\u00edas_relacionadas", "label": "/Objetivos_de_control_para_la_informaci\u00f3n_y_tecnolog\u00edas_relacionadas", "level": 8, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Gesti\u00f3n", "label": "/Gesti\u00f3n", "level": 9, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Liderazgo", "label": "/Liderazgo", "level": 10, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Grupo_de_trabajo", "label": "/Grupo_de_trabajo", "level": 11, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Organizaci\u00f3n", "label": "/Organizaci\u00f3n", "level": 12, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Instituciones", "label": "/Instituciones", "level": 13, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Estado", "label": "/Estado", "level": 14, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Noruega", "label": "/Noruega", "level": 15, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Estado_naci\u00f3n", "label": "/Estado_naci\u00f3n", "level": 15, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Organizaci\u00f3n_territorial_de_Noruega", "label": "/Organizaci\u00f3n_territorial_de_Noruega", "level": 16, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Mork", "label": "/Mork", "level": 17, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/Argentina", "label": "/Argentina", "level": 16, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/El_Otro_Yo", "label": "/El_Otro_Yo", "level": 17, "shape": "dot", "size": 10}, {"color": "#97c2fc", "id": "/El_Otro_Yo_del_Otro_Yo:_Esencia", "label": "/El_Otro_Yo_del_Otro_Yo:_Esencia", "level": 18, "shape": "dot", "size": 10}]);
+                  edges = new vis.DataSet([{"arrows": "from", "from": "/Filosof\u00eda", "to": "/Proposici\u00f3n", "width": 1}, {"arrows": "from", "from": "/Filosof\u00eda", "to": "/Entendimiento", "width": 1}, {"arrows": "from", "from": "/Proposici\u00f3n", "to": "/Hip\u00f3tesis_(m\u00e9todo_cient\u00edfico)", "width": 1}, {"arrows": "from", "from": "/Hip\u00f3tesis_(m\u00e9todo_cient\u00edfico)", "to": "/Experimento", "width": 1}, {"arrows": "from", "from": "/Experimento", "to": "/Ciencias_naturales", "width": 1}, {"arrows": "from", "from": "/Ciencias_naturales", "to": "/F\u00edsica", "width": 1}, {"arrows": "from", "from": "/F\u00edsica", "to": "/F\u00edsica_cl\u00e1sica", "width": 1}, {"arrows": "from", "from": "/F\u00edsica", "to": "/Espectro_electromagn\u00e9tico", "width": 1}, {"arrows": "from", "from": "/F\u00edsica_cl\u00e1sica", "to": "/Materia", "width": 1}, {"arrows": "from", "from": "/Materia", "to": "/Interpretaci\u00f3n#Ciencias_naturales_y_formales", "width": 1}, {"arrows": "from", "from": "/Interpretaci\u00f3n#Ciencias_naturales_y_formales", "to": "/Idea", "width": 1}, {"arrows": "from", "from": "/Idea", "to": "/Creatividad", "width": 1}, {"arrows": "from", "from": "/Creatividad", "to": "/Investigaci\u00f3n_cient\u00edfica", "width": 1}, {"arrows": "from", "from": "/Investigaci\u00f3n_cient\u00edfica", "to": "/Metodolog\u00eda", "width": 1}, {"arrows": "from", "from": "/Metodolog\u00eda", "to": "/M\u00e9todo_cient\u00edfico", "width": 1}, {"arrows": "from", "from": "/M\u00e9todo_cient\u00edfico", "to": "/Ciencia", "width": 1}, {"arrows": "from", "from": "/Ciencia", "to": "/Psicolog\u00eda", "width": 1}, {"arrows": "from", "from": "/Ciencia", "to": "/Ling\u00fc\u00edstica", "width": 1}, {"arrows": "from", "from": "/Psicolog\u00eda", "to": "/Actividad", "width": 1}, {"arrows": "from", "from": "/Actividad", "to": "/Econom\u00eda", "width": 1}, {"arrows": "from", "from": "/Econom\u00eda", "to": "/Factores_de_producci\u00f3n", "width": 1}, {"arrows": "from", "from": "/Factores_de_producci\u00f3n", "to": "/Empresa", "width": 1}, {"arrows": "from", "from": "/Empresa", "to": "/Emprendedor", "width": 1}, {"arrows": "from", "from": "/Emprendedor", "to": "/Negocio", "width": 1}, {"arrows": "from", "from": "/Negocio", "to": "/Tiempo_libre", "width": 1}, {"arrows": "from", "from": "/Tiempo_libre", "to": "/Entretenimiento", "width": 1}, {"arrows": "from", "from": "/Entretenimiento", "to": "/Entretenimiento_deportivo", "width": 1}, {"arrows": "from", "from": "/Entretenimiento_deportivo", "to": "/Lucha_libre_profesional", "width": 1}, {"arrows": "from", "from": "/Lucha_libre_profesional", "to": "/Women\u0027s_Championship", "width": 1}, {"arrows": "from", "from": "/Women\u0027s_Championship", "to": "/Wonder_of_Stardom_Championship", "width": 1}, {"arrows": "from", "from": "/Ling\u00fc\u00edstica", "to": "/Significado", "width": 1}, {"arrows": "from", "from": "/Ling\u00fc\u00edstica", "to": "/Polis\u00e9mico", "width": 1}, {"arrows": "from", "from": "/Significado", "to": "/Sem\u00e1ntica", "width": 1}, {"arrows": "from", "from": "/Sem\u00e1ntica", "to": "/Designaci\u00f3n", "width": 1}, {"arrows": "from", "from": "/Designaci\u00f3n", "to": "/Nombre", "width": 1}, {"arrows": "from", "from": "/Nombre", "to": "/Wiki", "width": 1}, {"arrows": "from", "from": "/Wiki", "to": "/Ayuda:Espacio_de_nombres", "width": 1}, {"arrows": "from", "from": "/Polis\u00e9mico", "to": "/Letrado", "width": 1}, {"arrows": "from", "from": "/Letrado", "to": "/Abogada", "width": 1}, {"arrows": "from", "from": "/Abogada", "to": "/Alejandra_Gils_Carb\u00f3", "width": 1}, {"arrows": "from", "from": "/Espectro_electromagn\u00e9tico", "to": "/Espectro_visible", "width": 1}, {"arrows": "from", "from": "/Espectro_visible", "to": "/Vista", "width": 1}, {"arrows": "from", "from": "/Vista", "to": "/Im\u00e1genes", "width": 1}, {"arrows": "from", "from": "/Im\u00e1genes", "to": "/Pel\u00edcula", "width": 1}, {"arrows": "from", "from": "/Pel\u00edcula", "to": "/Guion_(g\u00e9nero_literario)", "width": 1}, {"arrows": "from", "from": "/Guion_(g\u00e9nero_literario)", "to": "/Guion_cinematogr\u00e1fico", "width": 1}, {"arrows": "from", "from": "/Guion_cinematogr\u00e1fico", "to": "/Guionista", "width": 1}, {"arrows": "from", "from": "/Guionista", "to": "/Sam_Lake", "width": 1}, {"arrows": "from", "from": "/Entendimiento", "to": "/Concepto", "width": 1}, {"arrows": "from", "from": "/Concepto", "to": "/Sistema", "width": 1}, {"arrows": "from", "from": "/Sistema", "to": "/Sistema_formal", "width": 1}, {"arrows": "from", "from": "/Sistema_formal", "to": "/Software", "width": 1}, {"arrows": "from", "from": "/Software", "to": "/Desarrollo_de_software", "width": 1}, {"arrows": "from", "from": "/Desarrollo_de_software", "to": "/Framework", "width": 1}, {"arrows": "from", "from": "/Framework", "to": "/Objetivos_de_control_para_la_informaci\u00f3n_y_tecnolog\u00edas_relacionadas", "width": 1}, {"arrows": "from", "from": "/Objetivos_de_control_para_la_informaci\u00f3n_y_tecnolog\u00edas_relacionadas", "to": "/Gesti\u00f3n", "width": 1}, {"arrows": "from", "from": "/Gesti\u00f3n", "to": "/Liderazgo", "width": 1}, {"arrows": "from", "from": "/Liderazgo", "to": "/Grupo_de_trabajo", "width": 1}, {"arrows": "from", "from": "/Grupo_de_trabajo", "to": "/Organizaci\u00f3n", "width": 1}, {"arrows": "from", "from": "/Organizaci\u00f3n", "to": "/Instituciones", "width": 1}, {"arrows": "from", "from": "/Instituciones", "to": "/Estado", "width": 1}, {"arrows": "from", "from": "/Estado", "to": "/Noruega", "width": 1}, {"arrows": "from", "from": "/Estado", "to": "/Estado_naci\u00f3n", "width": 1}, {"arrows": "from", "from": "/Noruega", "to": "/Organizaci\u00f3n_territorial_de_Noruega", "width": 1}, {"arrows": "from", "from": "/Organizaci\u00f3n_territorial_de_Noruega", "to": "/Mork", "width": 1}, {"arrows": "from", "from": "/Estado_naci\u00f3n", "to": "/Argentina", "width": 1}, {"arrows": "from", "from": "/Argentina", "to": "/El_Otro_Yo", "width": 1}, {"arrows": "from", "from": "/El_Otro_Yo", "to": "/El_Otro_Yo_del_Otro_Yo:_Esencia", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"layout": {"hierarchical": {"enabled": true, "direction": "DU", "sortMethod": "directed", "levelSeparation": 90, "nodeSpacing": 140, "treeSpacing": 160}}, "interaction": {"dragNodes": true, "zoomView": true, "dragView": true}, "physics": {"hierarchicalRepulsion": {"centralGravity": 0.0, "springLength": 80, "nodeDistance": 130}, "solver": "hierarchicalRepulsion"}, "edges": {"arrows": {"to": {"enabled": false}, "from": {"enabled": false}}, "smooth": {"enabled": true, "type": "cubicBezier", "forceDirection": "vertical", "roundness": 0.5}}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
