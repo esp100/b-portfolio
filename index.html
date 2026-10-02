@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrián Orozco · Data Engineer & Python Developer</title>
+    <title data-i18n="page.title">Adrián Orozco · Data Engineer & Python Developer</title>
     <link rel="stylesheet" href="./css/styles.css">  
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -18,11 +18,18 @@
             </h1>
         </div>
         <nav class="barraNav">
-            <a href="#inicio">Inicio</a>
-            <a href="#skills">Skills</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#cursos">Cursos</a>
-            <a class="buttonContacto" href="#contacto">Contacto</a>
+            <a href="#inicio" data-i18n="nav.inicio">Inicio</a>
+            <a href="#skills" data-i18n="nav.skills">Skills</a>
+            <a href="#proyectos" data-i18n="nav.proyectos">Proyectos</a>
+            <a href="#cursos" data-i18n="nav.cursos">Cursos</a>
+            <a class="buttonContacto" href="#contacto" data-i18n="nav.contacto">Contacto</a>
+
+            <!-- Selector de idioma -->
+            <button id="langToggle" class="lang-toggle" type="button" data-lang="es"
+                    aria-label="Cambiar idioma / Switch language">
+                <span class="lang-code lang-code--es">ES</span>
+                <span class="lang-code lang-code--en">EN</span>
+            </button>
         </nav>
     </header>
     <main>
@@ -33,12 +40,12 @@
             <div class="overlay"></div>
             <div class="contenidoBanner">
                 <div class="content">
-                    <h1 class="holaTitle">Hola, soy <span class="name">Adrián Orozco</span><br><span id="texto">Data Engineer & Python Developer</span></h1>
-                <h4 class="subTitle">Convierto datos complejos en decisiones.</h4>
-                <p class="textoBanner">
-                    Ingeniero en Sistemas Computacionales por el IPN ESCOM. Construyo pipelines de datos,
-                    automatizo procesos y desarrollo soluciones analíticas con Python, SQL y Google Cloud Platform.
-                </p>
+                    <h1 class="holaTitle"><span data-i18n="hero.hola">Hola, soy</span> <span class="name">Adrián Orozco</span><br><span id="texto">Data Engineer &amp; Python Developer</span></h1>
+                    <h4 class="subTitle" data-i18n="hero.subtitulo">Convierto datos complejos en decisiones.</h4>
+                    <p class="textoBanner" data-i18n="hero.descripcion">
+                        Ingeniero en Sistemas Computacionales por el IPN ESCOM. Construyo pipelines de datos,
+                        automatizo procesos y desarrollo soluciones analíticas con Python, SQL y Google Cloud Platform.
+                    </p>
                     <div class="botones">                        
                         <a href="https://www.linkedin.com/in/adrian-orozco-s-258056305/" class="cv" target="_blank">
                             <img src="./Assets/LinkedInLogo.png" alt="LinkedInLogo">
@@ -54,14 +61,16 @@
                     <img src="./Assets/me.jpeg" alt="MeIMG">
                 </div>
             </div>
-        </section><section class="skills-intro" id="skills">
-            <h2 class="habilidadesSkills">Habilidades y tecnologías</h2>
-            <p class="textohabilidades">
+        </section>
+
+        <section class="skills-intro" id="skills">
+            <h2 class="habilidadesSkills" data-i18n="skills.titulo">Habilidades y tecnologías</h2>
+            <p class="textohabilidades" data-i18n="skills.descripcion">
                 Me interesa el ciclo completo del dato: desde su recolección y limpieza hasta su transformación y consumo analítico. Combino bases sólidas de backend con herramientas de ingesta, transformación y orquestación para construir soluciones que van del dato crudo a la decisión de negocio.
             </p>
         </section>
 
-        <section class="skills" aria-label="Tecnologías">
+        <section class="skills" data-i18n-attr="aria-label:skills.aria" aria-label="Tecnologías">
             <div class="carrusel" id="carrusel">
                 <ul class="pista" id="pista">
                     <!-- Skills JS -->
@@ -71,14 +80,14 @@
         <script src="./js/skills.js" defer></script>
 
         <section id="proyectos">
-            <h2 class="tituloProyectos">Proyectos</h2>
+            <h2 class="tituloProyectos" data-i18n="proyectos.titulo">Proyectos</h2>
 
             <div class="container">
                 <div class="row align-items-center mb-5">
 
                     <div class="col-md-6 text-sample g-3 textosample">
-                        <h2>Optimización de Colocación de Cámaras de Vigilancia</h2>
-                        <h4>Proyecto de titulación · Optimización combinatoria · 2025</h4>
+                        <h2 data-i18n="p1.titulo">Optimización de Colocación de Cámaras de Vigilancia</h2>
+                        <h4 data-i18n="p1.subtitulo">Proyecto de titulación · Optimización combinatoria · 2025</h4>
                         <div class="tech-stack">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">GeoPandas</span>
@@ -87,22 +96,25 @@
                             <span class="tech-tag">PSO</span>
                             <span class="tech-tag">Genetic Algorithm</span>
                         </div>
-                        <p>
+                        <p data-i18n="p1.desc1">
                             Trabajo Terminal de titulación. Modelé el problema de colocar n cámaras de vigilancia
                             en el sistema C5 de la CDMX como un problema de optimización combinatoria, estimando
                             zonas de riesgo y eligiendo la mejor combinación de regiones mediante algoritmos
                             bioinspirados (PSO y Genético).
                         </p>
-                        <p>
+                        <p data-i18n="p1.desc2">
                             Procesé datasets de 1.8K a 1.4B de registros con Python y KNIME, y entregué una
                             herramienta web interactiva con Flask y Folium para visualizar las regiones propuestas.
                         </p>
-                        <p class="foot-text">En colaboración con <a href="https://ninjatotim.github.io/portafolio/" target="_blank" class="inline-link">Eva Fuentes</a>.</p>
+                        <p class="foot-text"><span data-i18n="p1.colaboracion">En colaboración con</span> <a href="https://ninjatotim.github.io/portafolio/" target="_blank" class="inline-link">Eva Fuentes</a>.</p>
                         
-                        <a href="https://drive.google.com/file/d/1uu3EvhAD3uWjO5zftYu8hvId1RWX53oD/view?usp=sharing" class="cv">Artículo Técnico (TT 2025-A012)</a>
+                        <a href="https://drive.google.com/file/d/1uu3EvhAD3uWjO5zftYu8hvId1RWX53oD/view?usp=sharing" class="cv" data-i18n="p1.enlace">Artículo Técnico (TT 2025-A012)</a>
                     </div>
                     <div class="col-md-6 d-flex justify-content-center g-3">
-                        <img src="./Assets/informacion_camara_en_el_mapa.jpeg" alt="sample project img"  class="img-fluid grid Image rounded-3 sample">
+                        <img src="./Assets/informacion_camara_en_el_mapa.jpeg"
+                             alt="sample project img"
+                             data-i18n-attr="alt:p1.imgAlt"
+                             class="img-fluid grid Image rounded-3 sample">
                     </div>
                 </div>
             </div>
@@ -112,6 +124,7 @@
                         <iframe
                             src="./iframe/mapa_salida.html"
                             title="Mapa interactivo Folium"
+                            data-i18n-attr="title:p1.iframe"
                             loading="lazy"
                             class="embed-frame"></iframe>
                     </div>
@@ -125,13 +138,13 @@
                         <img src="./Assets/sampleimg.png" alt="sample project img"  class="img-fluid grid Image rounded-3 sample">
                     </div>
                     <div class="col-md-6 text-sample g-3 textosample">
-                        <h2>Nonogram Solver</h2>
+                        <h2 data-i18n="p2.titulo">Nonogram Solver</h2>
                         <div class="tech-stack">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Flask</span>
                             <span class="tech-tag">Genetic Algorithm</span>
                         </div>
-                        <p>
+                        <p data-i18n="p2.desc">
                             Servicio web en Flask que resuelve nonogramas mediante un algoritmo genético,
                             con un editor de cuadrículas binarias a partir de archivos CSV.
                         </p>
@@ -145,14 +158,14 @@
                 <div class="row align-items-center mb-5">
 
                     <div class="col-md-4 text-sample g-3 textosample">
-                        <h2>Árbol de filosofía - Wikipedia</h2>
+                        <h2 data-i18n="p3.titulo">Árbol de filosofía - Wikipedia</h2>
                         <div class="tech-stack">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Notebook</span>
                             <span class="tech-tag">BeautifulSoup</span>
                             <span class="tech-tag">Pyvis</span>
                         </div>
-                        <p>
+                        <p data-i18n="p3.desc">
                             En aproximadamente el 97% de los artículos de Wikipedia, seguir el primer enlace
                             te lleva eventualmente al artículo de Filosofía. Este proyecto usa web scraping
                             con BeautifulSoup para recorrer ejemplos de esos saltos y visualizar el árbol resultante
@@ -164,6 +177,7 @@
                         <iframe
                         src="./iframe/ejemplo_tree.html"
                         title="Grafo de árbol Pyvis"
+                        data-i18n-attr="title:p3.iframe"
                         loading="lazy"
                         class="embed-frame tree-iframe"></iframe>
                     </div>
@@ -174,18 +188,18 @@
             <div class="container">
                 <details class="repo-details">
                     <summary class="repo-summary">
-                        <span class="when-closed">Ver más proyectos</span>
-                        <span class="when-open">Ver menos proyectos</span>
+                        <span class="when-closed" data-i18n="more.ver">Ver más proyectos</span>
+                        <span class="when-open" data-i18n="more.ocultar">Ver menos proyectos</span>
                     </summary>
 
                     <div class="repo-cards-grid" id="repo-cards">
                         <article class="repo-card">
-                            <h3><a href=" " target="_blank">Buscaminas Java</a></h3>
+                            <h3><a href="https://github.com/esp100/buscaminas_botones" target="_blank" data-i18n="repo1.titulo">Buscaminas Java</a></h3>
                             <div class="repo-meta">
                                 <span class="tech-tag">Java</span>
                                 <span class="tech-tag">Swing</span>
                             </div>
-                            <p>
+                            <p data-i18n="repo1.desc">
                                 Implementación del clásico Buscaminas con Java Swing, incluyendo lógica de
                                 tablero, minas y sistema de banderas.
                             </p>
@@ -193,12 +207,12 @@
                         </article>
 
                         <article class="repo-card">
-                            <h3><a href=" " target="_blank">PWA Chat Cifrado</a></h3>
+                            <h3><a href="https://github.com/esp100/PWA-Chat-Cifrado" target="_blank" data-i18n="repo2.titulo">PWA Chat Cifrado</a></h3>
                             <div class="repo-meta">
                                 <span class="tech-tag">Python</span>
                                 <span class="tech-tag">Flask</span>
                             </div>
-                            <p>
+                            <p data-i18n="repo2.desc">
                                 Chat cifrado construido en Flask siguiendo una arquitectura de microservicios
                                 y desplegado como PWA. Proyecto comparativo del uso de Azure App Services,
                                 AWS App Runner y GCP Cloud Run.
@@ -207,12 +221,13 @@
                         </article>
 
                         <article class="repo-card">
-                            <h3><a href=" " target="_blank">Flappy Bird Java</a></h3>
+                            <h3><a href="https://github.com/esp100/Flappy-Java" target="_blank" data-i18n="repo3.titulo">Flappy Bird Java</a></h3>
                             <div class="repo-meta">
                                 <span class="tech-tag">Java</span>
                                 <span class="tech-tag">Swing</span>
+                                <span class="tech-tag">MySQL</span>
                             </div>
-                            <p>
+                            <p data-i18n="repo3.desc">
                                 Réplica jugable de Flappy Bird en Java Swing, con manejo de assets
                                 gráficos, colisiones y ciclo de juego.
                             </p>
@@ -223,13 +238,13 @@
             </div>
         </section>
         <section id="cursos">
-            <h2 class="tituloCursos">Cursos que he realizado</h2>
+            <h2 class="tituloCursos" data-i18n="cursos.titulo">Cursos que he realizado</h2>
 
             <div class="container">
                 <div class="cursos-grid" id="cursos-grid">
                     <!--  Cursos JS -->
                 </div>
-                <p id="cursos-error" hidden>No se pudieron cargar los cursos.</p>
+                <p id="cursos-error" data-i18n="cursos.error" hidden>No se pudieron cargar los cursos.</p>
             </div>
         </section>
 
@@ -241,8 +256,8 @@
             <div class="row align-items-start gy-4">
 
                 <div class="col-md-7">
-                   <h2>¿Construimos algo juntos?</h2>
-                        <p class="textoContacto">
+                   <h2 data-i18n="footer.titulo">¿Construimos algo juntos?</h2>
+                        <p class="textoContacto" data-i18n="footer.texto">
                             Estoy abierto a roles junior/trainee en Data Engineering, Data Analytics y desarrollo Python.
                             Escríbeme y te respondo en menos de 24 horas.
                         </p>
@@ -261,12 +276,12 @@
 
                 <div class="col-md-5">
                     <div class="Footer">
-                        <h5>Enfoques</h5>
-                        <p>Data Engineering</p>
-                        <p>Data Analytics</p>
-                        <p>Desarrollo Python</p>
-                        <p>Pipelines & ETL/ELT</p>
-                        <p>APIs RESTful</p>
+                        <h5 data-i18n="footer.enfoques">Enfoques</h5>
+                        <p data-i18n="footer.f1">Data Engineering</p>
+                        <p data-i18n="footer.f2">Data Analytics</p>
+                        <p data-i18n="footer.f3">Desarrollo Python</p>
+                        <p data-i18n="footer.f4">Pipelines & ETL/ELT</p>
+                        <p data-i18n="footer.f5">APIs RESTful</p>
                     </div>
                 </div>
 
@@ -275,6 +290,7 @@
     </footer>
     <div class="lineaFinal"></div>
 
+    <script src="./js/i18n.js"></script>
     <script src="./js/cursos.js" defer></script>
     <script src="./js/texto.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

@@ -956,3 +956,25 @@ header {
         height: 500px;
     }
 }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 14px;
+  padding: 4px 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: transparent;
+  color: white;
+  font: white;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+.lang-toggle:hover { opacity: 0.85; }
+.lang-toggle .lang-code { opacity: 0.4; transition: opacity 0.2s ease; }
+.lang-toggle[data-lang="es"] .lang-code--es,
+.lang-toggle[data-lang="en"] .lang-code--en { opacity: 1; }

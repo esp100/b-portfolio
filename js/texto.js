@@ -1,22 +1,45 @@
-const textos = [
-    "Desarrollador Python",
-    "Analísta de Datos Jr",
-    "Ingeniero en Sistemas Computacionales",
-    "Backend Developer"
-];
+(function () {
+  'use strict';
 
-let indice = 0;
-const texto = document.getElementById("texto");
+  const el = document.getElementById('texto');
+  if (!el) return;
 
-texto.textContent = textos[0];
+  let indice = 0;
+  let intervalId = null;
 
-setInterval(() => {
-    texto.style.opacity = 0;
+  function getTextos() {
+    if (window.PortfolioI18n && typeof window.PortfolioI18n.getRotatingTexts === 'function') {
+      const arr = window.PortfolioI18n.getRotatingTexts();
+      if (Array.isArray(arr) && arr.length) return arr;
+    }
+    
+    return [
+      'Desarrollador Python',
+      'Analísta de Datos Jr',
+      'Ingeniero en Sistemas Computacionales',
+      'Backend Developer'
+    ];
+  }
 
-    setTimeout(() => {
+  function start() {
+    if (intervalId) clearInterval(intervalId);
+
+    const textos = getTextos();
+    indice = 0;
+    el.style.transition = 'opacity 0.5s ease';
+    el.style.opacity = 1;
+    el.textContent = textos[0];
+
+    intervalId = setInterval(function () {
+      el.style.opacity = 0;
+      setTimeout(function () {
         indice = (indice + 1) % textos.length;
-        texto.textContent = textos[indice];
-        texto.style.opacity = 1;
-    }, 500);
+        el.textContent = textos[indice];
+        el.style.opacity = 1;
+      }, 500);
+    }, 2500);
+  }
 
-}, 2500);
+  document.addEventListener('languagechange', start);
+  start();
+})();
