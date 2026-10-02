@@ -78,7 +78,7 @@
         "alias": "Java",
         "alias_eng": "Java",
         "date": "",
-        "show": true,
+        "show": false,
         "prioridad": 9
     },
 
