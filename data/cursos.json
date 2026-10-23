@@ -404,6 +404,30 @@
         "date": "",
         "show": false,
         "prioridad": 31
+    },
+
+{
+        "dominio": "www.kaggle.com/learn/certification/",
+        "provider": "Kaggle",
+        "id": "adrinorozco/intro-to-sql",
+        "titulo": "Intro to SQL",
+        "alias": "Introducción a SQL y BigQuery",
+        "alias_eng": "Intro to SQL and BigQuery",
+        "date": "2026-10",
+        "show": false,
+        "prioridad": 4
+    },
+
+{
+        "dominio": "www.kaggle.com/learn/certification/",
+        "provider": "Kaggle",
+        "id": "adrinorozco/advanced-sql",
+        "titulo": "Advanced SQL",
+        "alias": "SQL en BigQuery",
+        "alias_eng": "SQL for BigQuery library",
+        "date": "2026-10",
+        "show": true,
+        "prioridad": 4
     }
 
 ]
