@@ -126,7 +126,7 @@
         "titulo": "Big Data y Spark: ingeniería de datos con Python y pyspark",
         "alias": "Big Data & PySpark",
         "alias_eng": "Big Data & PySpark",
-        "date": "",
+        "date": "2026-01",
         "show": true,
         "prioridad": 3,
         "tags": ["Big Data", "Python", "ETL / ELT"]
@@ -138,7 +138,7 @@
         "titulo": "GIT+GitHub: Todo un sistema de control de versiones de cero",
         "alias": "Git + GitHub",
         "alias_eng": "Git + GitHub",
-        "date": "",
+        "date": "2025-11",
         "show": true,
         "prioridad": 9,
         "tags": ["Tools"]
@@ -150,7 +150,7 @@
         "titulo": "GCP - Google Cloud Professional Data Engineer Certification",
         "alias": "GCP Google Cloud Platform",
         "alias_eng": "GCP Google Cloud Platform",
-        "date": "",
+        "date": "2025-12",
         "show": true,
         "prioridad": 2,
         "tags": ["Cloud", "Big Data", "ETL / ELT", "Databases"]
@@ -282,7 +282,7 @@
         "titulo": "Vibe Coding desde Cero: Aprende a \"Programar\" Usando IA",
         "alias": "Vibe Coding",
         "alias_eng": "Vibe Coding",
-        "date": "",
+        "date": "2025-10",
         "show": true,
         "prioridad": 27,
         "tags": ["AI", "Prompts", "Tools"]
