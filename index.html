@@ -237,14 +237,52 @@
                 </details>
             </div>
         </section>
+        
         <section id="cursos">
             <h2 class="tituloCursos" data-i18n="cursos.titulo">Cursos que he realizado</h2>
 
             <div class="container">
-                <div class="cursos-grid" id="cursos-grid">
-                    <!--  Cursos JS -->
-                </div>
+                <!-- Grid -->
+                <div class="cursos-grid" id="cursos-grid"></div>
+
+                <!-- Estados -->
                 <p id="cursos-error" data-i18n="cursos.error" hidden>No se pudieron cargar los cursos.</p>
+                <p id="cursos-vacio" data-i18n="cursos.vacio" hidden>No hay cursos que coincidan con los filtros.</p>
+
+                <!-- Botón -->
+                <div class="cursos-mas-wrap">
+                    <button id="cursos-mas" class="cursos-mas-btn" type="button" aria-expanded="false">
+                        <span class="when-collapsed" data-i18n="cursos.mas">Ver más cursos</span>
+                        <span class="when-expanded" data-i18n="cursos.menos">Ver menos cursos</span>
+                    </button>
+                </div>
+                <br>
+
+                <!-- Controles -->
+                <div class="cursos-controls"> 
+                    <label class="cursos-control">
+                        <span data-i18n="cursos.orden">Ordenar por</span>
+                        <select id="cursos-orden">
+                            <option value="prioridad" data-i18n="cursos.ordenPrioridad">Orden original</option>
+                            <option value="fecha" data-i18n="cursos.ordenFecha">Fecha (más reciente)</option>
+                        </select>
+                    </label>
+
+                    <label class="cursos-control">
+                        <span data-i18n="cursos.filtrarTag">Etiqueta</span>
+                        <select id="cursos-filtro-tag">
+                            <option value="" data-i18n="cursos.todasTags">Todas las etiquetas</option>
+                        </select>
+                    </label>
+
+                    <!--label class="cursos-control">
+                        <span data-i18n="cursos.filtrarProvider">Proveedor</span>
+                        <select id="cursos-filtro-provider">
+                            <option value="" data-i18n="cursos.todosProviders">Todos los proveedores</option>
+                        </select>
+                    </label-->
+                </div>
+
             </div>
         </section>
 

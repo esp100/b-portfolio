@@ -66,6 +66,16 @@
 
       'cursos.titulo': 'Cursos que he realizado',
       'cursos.error': 'No se pudieron cargar los cursos.',
+      'cursos.orden': 'Ordenar por',
+      'cursos.ordenPrioridad': 'Orden original',
+      'cursos.ordenFecha': 'Fecha (más reciente)',
+      'cursos.filtrarTag': 'Etiqueta',
+      'cursos.filtrarProvider': 'Proveedor',
+      'cursos.todasTags': 'Todas las etiquetas',
+      'cursos.todosProviders': 'Todos los proveedores',
+      'cursos.vacio': 'No hay cursos que coincidan con los filtros.',
+      'cursos.mas': 'Ver más cursos',
+      'cursos.menos': 'Ver menos cursos',
 
       'footer.titulo': '¿Construimos algo juntos?',
       'footer.texto':
@@ -137,6 +147,16 @@
 
       'cursos.titulo': "Courses I've completed",
       'cursos.error': 'Could not load courses.',
+      'cursos.orden': 'Sort by',
+      'cursos.ordenPrioridad': 'Original order',
+      'cursos.ordenFecha': 'Date (newest first)',
+      'cursos.filtrarTag': 'Tag',
+      'cursos.filtrarProvider': 'Provider',
+      'cursos.todasTags': 'All tags',
+      'cursos.todosProviders': 'All providers',
+      'cursos.vacio': 'No courses match the filters.',
+      'cursos.mas': 'Show more courses',
+      'cursos.menos': 'Show fewer courses',
 
       'footer.titulo': 'Shall we build something together?',
       'footer.texto':
