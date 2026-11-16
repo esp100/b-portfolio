@@ -14,6 +14,7 @@
     }
     
     return [
+      'Ingeniero de Datos Jr',
       'Desarrollador Python',
       'Analísta de Datos Jr',
       'Ingeniero en Sistemas Computacionales',

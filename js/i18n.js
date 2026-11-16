@@ -152,12 +152,14 @@
 
   const rotatingTexts = {
     es: [
+      'Ingeniero de Datos Jr',
       'Desarrollador Python',
       'Analísta de Datos Jr',
       'Ingeniero en Sistemas Computacionales',
       'Backend Developer'
     ],
     en: [
+      'Junior Data Engineer',
       'Python Developer',
       'Junior Data Analyst',
       'Computer Systems Engineer',
