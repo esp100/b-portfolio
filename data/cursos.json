@@ -8,10 +8,10 @@
         "alias_eng": "Productivity",
         "date": "",
         "show": false,
-        "prioridad": 30
+        "prioridad": 30,
+        "tags": ["Productivity", "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-1e549705-fab5-4d54-afcd-ce452177d1b1",
@@ -20,9 +20,10 @@
         "alias_eng": "Java & Spring Boot: RESTful APIs",
         "date": "",
         "show": true,
-        "prioridad": 11
+        "prioridad": 11,
+        "tags": ["Java"]
     },
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-3d08f901-b02d-4488-af1f-96466b998685",
@@ -31,10 +32,10 @@
         "alias_eng": "Resilience",
         "date": "",
         "show": false,
-        "prioridad": 30
+        "prioridad": 30,
+        "tags": ["Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-7abe4c92-b5f3-490f-b8eb-f9966fd5de5c",
@@ -43,10 +44,10 @@
         "alias_eng": "Clean Code & SOLID Principles",
         "date": "",
         "show": true,
-        "prioridad": 15
+        "prioridad": 15,
+        "tags": ["Java"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-7c1f9eef-2fa6-4acb-802f-4d687d35025c",
@@ -55,10 +56,10 @@
         "alias_eng": "Communication Skills",
         "date": "",
         "show": false,
-        "prioridad": 30
+        "prioridad": 30,
+        "tags": ["Communication", "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-26ff0417-67bd-4dfb-9ea1-fb8abb1653e7",
@@ -67,10 +68,10 @@
         "alias_eng": "SQL",
         "date": "",
         "show": true,
-        "prioridad": 7
+        "prioridad": 7,
+        "tags": ["SQL", "Databases"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-35a666db-4e05-4696-a1bc-c32159553c2a",
@@ -79,10 +80,10 @@
         "alias_eng": "Java",
         "date": "",
         "show": false,
-        "prioridad": 9
+        "prioridad": 9,
+        "tags": ["Java"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-35dbfa0c-48a7-4951-8d66-b74c1605282d",
@@ -91,10 +92,10 @@
         "alias_eng": "Public Speaking",
         "date": "",
         "show": false,
-        "prioridad": 30
+        "prioridad": 30,
+        "tags": ["Communication" , "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-43f40122-677f-4a53-962c-6471b6e8771d",
@@ -103,10 +104,10 @@
         "alias_eng": "Teamwork",
         "date": "",
         "show": false,
-        "prioridad": 20
+        "prioridad": 20,
+        "tags": ["Teamwork" , "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-53b6e2ee-870e-400d-a9ad-8009b1f73eb1",
@@ -115,10 +116,10 @@
         "alias_eng": "Leadership Skills",
         "date": "",
         "show": false,
-        "prioridad": 21
+        "prioridad": 21,
+        "tags": ["Leadership", "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-58f6a91d-6703-47e6-858a-d356e8c5e32c",
@@ -127,10 +128,10 @@
         "alias_eng": "Big Data & PySpark",
         "date": "",
         "show": true,
-        "prioridad": 3
+        "prioridad": 3,
+        "tags": ["Big Data", "Python", "ETL / ELT"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-70be1621-4033-40fd-a158-cd4b3a9c4b55",
@@ -139,10 +140,10 @@
         "alias_eng": "Git + GitHub",
         "date": "",
         "show": true,
-        "prioridad": 9
+        "prioridad": 9,
+        "tags": ["Tools"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-73ee41ba-224b-4e19-93e9-93dc582ac4bf",
@@ -151,10 +152,10 @@
         "alias_eng": "GCP Google Cloud Platform",
         "date": "",
         "show": true,
-        "prioridad": 2
+        "prioridad": 2,
+        "tags": ["Cloud", "Big Data", "ETL / ELT", "Databases"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-788ae7f1-ed8f-49db-bcc5-29a136bf63eb",
@@ -163,10 +164,10 @@
         "alias_eng": "Productivity and Goals",
         "date": "",
         "show": false,
-        "prioridad": 32
+        "prioridad": 32,
+        "tags": ["Productivity", "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-889c58ad-f6c2-47a4-aefc-7a14159dfded",
@@ -175,10 +176,10 @@
         "alias_eng": "Looker Studio",
         "date": "",
         "show": true,
-        "prioridad": 17
+        "prioridad": 17,
+        "tags": ["BI", "Tools"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-891e41b5-22e1-4b4f-9928-c3f5cd2e2a25",
@@ -187,10 +188,10 @@
         "alias_eng": "Apache Airflow 3",
         "date": "",
         "show": true,
-        "prioridad": 6
+        "prioridad": 6,
+        "tags": ["ETL / ELT", "Python", "Automation", "Tools"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-084568df-b73e-42ed-b4e9-db530e9c3381",
@@ -199,10 +200,10 @@
         "alias_eng": "Self-esteem and Emotional Management",
         "date": "",
         "show": false,
-        "prioridad": 31
+        "prioridad": 31,
+        "tags": [ "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-31525682-5388-47ad-b10e-279dfbd2c6ce",
@@ -211,22 +212,22 @@
         "alias_eng": "Automation with Selenium Webdriver and Java",
         "date": "",
         "show": true,
-        "prioridad": 25
+        "prioridad": 25,
+        "tags": ["Automation", "Java"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-a8ebc0ea-8c4f-4e25-84f8-2a16c6ce28a7",
         "titulo": "Curso Gemini Google Workspace. Máxima Productividad con IA",
         "alias": "Gemini en Google Workspace",
-        "alias_eng": " Gemini on Google Workspace",
+        "alias_eng": "Gemini on Google Workspace",
         "date": "",
         "show": true,
-        "prioridad": 28
+        "prioridad": 28,
+        "tags": ["AI", "Productivity", "Tools"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-b7f4cd36-34f0-4aa5-a477-7c87342be91a",
@@ -235,10 +236,10 @@
         "alias_eng": "Team Management and Remote Work",
         "date": "",
         "show": true,
-        "prioridad": 30
+        "prioridad": 30,
+        "tags": ["Leadership", "Teamwork", "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-bb5a48d3-2f31-441d-b840-07e20962e154",
@@ -247,10 +248,10 @@
         "alias_eng": "Google Cloud Platform - Fundamentals",
         "date": "",
         "show": true,
-        "prioridad": 10
+        "prioridad": 10,
+        "tags": ["Cloud"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-d020c2d5-53fd-47f1-a1bc-7e41910a4e4d",
@@ -259,10 +260,10 @@
         "alias_eng": "Python for Data Science",
         "date": "",
         "show": true,
-        "prioridad": 5
+        "prioridad": 5,
+        "tags": ["Python", "Statistics"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-d1017923-784c-468a-b16f-38b56373cf49",
@@ -271,10 +272,10 @@
         "alias_eng": "Cognitive Techniques",
         "date": "",
         "show": false,
-        "prioridad": 34
+        "prioridad": 34,
+        "tags": ["Soft Skills", "Productivity"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-dd6395e9-d4eb-4ae6-8012-2171ced36e66",
@@ -283,10 +284,10 @@
         "alias_eng": "Vibe Coding",
         "date": "",
         "show": true,
-        "prioridad": 27
+        "prioridad": 27,
+        "tags": ["AI", "Prompts", "Tools"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-e54d194b-9875-4379-bddb-d78d64844f23",
@@ -295,10 +296,10 @@
         "alias_eng": "Fundamentals of Algorithms",
         "date": "",
         "show": false,
-        "prioridad": 29
+        "prioridad": 29,
+        "tags": ["Algorithms"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-e87a3022-6670-4a6f-a75a-46d0ea238e92",
@@ -307,10 +308,10 @@
         "alias_eng": "BigQuery",
         "date": "",
         "show": true,
-        "prioridad": 12
+        "prioridad": 12,
+        "tags": ["SQL", "Databases", "Cloud", "Big Data"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-fb509c01-d27e-4e4d-9f7b-4e39f9a492db",
@@ -319,10 +320,10 @@
         "alias_eng": "Prompt Engineering with ChatGPT",
         "date": "",
         "show": true,
-        "prioridad": 26
+        "prioridad": 26,
+        "tags": ["AI", "Prompts"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-fd8c58a7-aa19-4e5f-9516-9a7eafcdc1d5",
@@ -331,10 +332,10 @@
         "alias_eng": "The Art of Active Listening",
         "date": "",
         "show": false,
-        "prioridad": 0
+        "prioridad": 0,
+        "tags": ["Communication" , "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-f4134db9-b4e2-4fe0-8130-6159a1f0a409",
@@ -343,10 +344,10 @@
         "alias_eng": "Leadership in the AI Era",
         "date": "",
         "show": false,
-        "prioridad": 29
+        "prioridad": 29,
+        "tags": ["Leadership", "AI", "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-2fe55e92-626e-486e-b1cd-8e0bb9d0f6c1",
@@ -355,10 +356,10 @@
         "alias_eng": "Portfolio of a Data Engineer",
         "date": "",
         "show": false,
-        "prioridad": 29
+        "prioridad": 29,
+        "tags": ["ETL / ELT", "Python", "SQL", "Databases"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-33f59678-87b3-429e-95bb-bdc34cba4879",
@@ -367,10 +368,10 @@
         "alias_eng": "Leadership",
         "date": "",
         "show": false,
-        "prioridad": 32
+        "prioridad": 32,
+        "tags": ["Leadership", "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-213ff6bc-9c8b-4c65-8109-a1ca7c05e9ef",
@@ -379,10 +380,10 @@
         "alias_eng": "Statistics and Hypothesis Testing",
         "date": "",
         "show": false,
-        "prioridad": 14
+        "prioridad": 14,
+        "tags": ["Statistics"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-561922aa-8735-49a5-8c7f-3c22f7d43d0f",
@@ -391,10 +392,10 @@
         "alias_eng": "Productivity",
         "date": "",
         "show": false,
-        "prioridad": 29
+        "prioridad": 29,
+        "tags": ["Productivity", "Soft Skills"]
     },
-
-{
+    {
         "dominio": "ude.my/",
         "provider": "Udemy Business",
         "id": "UC-c0b86482-c442-4e93-a45a-2f5875aa1b1e",
@@ -403,10 +404,10 @@
         "alias_eng": "Negotiation and Persuasion Skills",
         "date": "",
         "show": false,
-        "prioridad": 31
+        "prioridad": 31,
+        "tags": ["Communication", "Soft Skills"]
     },
-
-{
+    {
         "dominio": "www.kaggle.com/learn/certification/",
         "provider": "Kaggle",
         "id": "adrinorozco/intro-to-sql",
@@ -415,10 +416,10 @@
         "alias_eng": "Intro to SQL and BigQuery",
         "date": "2026-10",
         "show": false,
-        "prioridad": 4
+        "prioridad": 4,
+        "tags": ["SQL", "Databases", "Cloud"]
     },
-
-{
+    {
         "dominio": "www.kaggle.com/learn/certification/",
         "provider": "Kaggle",
         "id": "adrinorozco/advanced-sql",
@@ -427,7 +428,31 @@
         "alias_eng": "SQL for BigQuery library",
         "date": "2026-10",
         "show": true,
-        "prioridad": 4
+        "prioridad": 4,
+        "tags": ["SQL", "Databases", "Cloud", "Python"]
+    },
+    {
+        "dominio": "simpli-web.app.link/e/",
+        "provider": "simplilearn SkillUP",
+        "id": "D2MOPy07J7b",
+        "titulo": "Business Intelligence Fundamentals",
+        "alias": "Fundamentos de BI (Business Intelligence)",
+        "alias_eng": "Business Intelligence Fundamentals",
+        "date": "2026-11",
+        "show": true,
+        "prioridad": 5,
+        "tags": ["BI"]
+    },
+    {
+        "dominio": "www.datacamp.com/statement-of-accomplishment/course/",
+        "provider": "datacamp",
+        "id": "4093f02bf046f1d0a1fbb4e0acb195c4b3c90db6?raw=1",
+        "titulo": "Introduction to Snowflake",
+        "alias": "Introducción a Snowflake",
+        "alias_eng": "Introduction to Snowflake",
+        "date": "2026-11",
+        "show": true,
+        "prioridad": 6,
+        "tags": ["Databases", "SQL", "Cloud", "Big Data"]
     }
-
 ]
